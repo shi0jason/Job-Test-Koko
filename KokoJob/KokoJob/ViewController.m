@@ -2,8 +2,8 @@
 //  ViewController.m
 //  KokoJob
 //
-//  Created by 施崇邑 on 2021/1/14.
-//  Copyright © 2021 施崇邑. All rights reserved.
+//  Created by Jason on 2021/1/14.
+//  Copyright © 2021 Jason. All rights reserved.
 //
 
 #import "ViewController.h"
