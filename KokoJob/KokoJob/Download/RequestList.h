@@ -1,0 +1,20 @@
+//
+//  RequestList.h
+//  KokoJob
+//
+//  Created by Jason on 2021/1/14.
+//  Copyright © 2021 Jason. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#ifndef RequestList_h
+#define RequestList_h
+
+static NSString *userData = @"https://dimanyen.github.io/man.json";
+static NSString *friendList1 = @"https://dimanyen.github.io/friend1.json";
+static NSString *friendList2 = @"https://dimanyen.github.io/friend2.json";
+static NSString *friendList3 = @"https://dimanyen.github.io/friend3.json";
+static NSString *friendList4 = @"https://dimanyen.github.io/friend4.json";
+
+#endif /* RequestList_h */

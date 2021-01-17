@@ -15,6 +15,10 @@
 		93AFC55725B0402200B4C2E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC55625B0402200B4C2E5 /* main.m */; };
 		93AFC56125B0402200B4C2E5 /* KokoJobTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC56025B0402200B4C2E5 /* KokoJobTests.m */; };
 		93AFC56C25B0402200B4C2E5 /* KokoJobUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC56B25B0402200B4C2E5 /* KokoJobUITests.m */; };
+		93AFC58125B0487500B4C2E5 /* UserDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC58025B0487500B4C2E5 /* UserDataModel.m */; };
+		93AFC58425B048A300B4C2E5 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC58325B048A300B4C2E5 /* FriendModel.m */; };
+		93AFC58825B049FB00B4C2E5 /* ReponseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC58725B049FB00B4C2E5 /* ReponseHelper.m */; };
+		93AFC58B25B04A5E00B4C2E5 /* DownloadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC58A25B04A5E00B4C2E5 /* DownloadProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,15 @@
 		93AFC56725B0402200B4C2E5 /* KokoJobUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KokoJobUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AFC56B25B0402200B4C2E5 /* KokoJobUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KokoJobUITests.m; sourceTree = "<group>"; };
 		93AFC56D25B0402200B4C2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93AFC57F25B0487500B4C2E5 /* UserDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDataModel.h; sourceTree = "<group>"; };
+		93AFC58025B0487500B4C2E5 /* UserDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDataModel.m; sourceTree = "<group>"; };
+		93AFC58225B048A300B4C2E5 /* FriendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendModel.h; sourceTree = "<group>"; };
+		93AFC58325B048A300B4C2E5 /* FriendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendModel.m; sourceTree = "<group>"; };
+		93AFC58625B049FB00B4C2E5 /* ReponseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReponseHelper.h; sourceTree = "<group>"; };
+		93AFC58725B049FB00B4C2E5 /* ReponseHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReponseHelper.m; sourceTree = "<group>"; };
+		93AFC58925B04A5E00B4C2E5 /* DownloadProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadProxy.h; sourceTree = "<group>"; };
+		93AFC58A25B04A5E00B4C2E5 /* DownloadProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadProxy.m; sourceTree = "<group>"; };
+		93AFC58C25B0500600B4C2E5 /* RequestList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +114,10 @@
 		93AFC54625B0402100B4C2E5 /* KokoJob */ = {
 			isa = PBXGroup;
 			children = (
+				93AFC58525B049D800B4C2E5 /* DataProccess */,
+				93AFC57E25B0480F00B4C2E5 /* Model */,
+				93AFC57D25B047F900B4C2E5 /* Download */,
+				93AFC57925B047C400B4C2E5 /* View */,
 				93AFC54725B0402100B4C2E5 /* AppDelegate.h */,
 				93AFC54825B0402100B4C2E5 /* AppDelegate.m */,
 				93AFC54A25B0402100B4C2E5 /* ViewController.h */,
@@ -130,6 +147,67 @@
 				93AFC56D25B0402200B4C2E5 /* Info.plist */,
 			);
 			path = KokoJobUITests;
+			sourceTree = "<group>";
+		};
+		93AFC57925B047C400B4C2E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93AFC57C25B047F000B4C2E5 /* Cell */,
+				93AFC57B25B047E600B4C2E5 /* TableView */,
+				93AFC57A25B047D900B4C2E5 /* Tabber */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93AFC57A25B047D900B4C2E5 /* Tabber */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tabber;
+			sourceTree = "<group>";
+		};
+		93AFC57B25B047E600B4C2E5 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		93AFC57C25B047F000B4C2E5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		93AFC57D25B047F900B4C2E5 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				93AFC58C25B0500600B4C2E5 /* RequestList.h */,
+				93AFC58925B04A5E00B4C2E5 /* DownloadProxy.h */,
+				93AFC58A25B04A5E00B4C2E5 /* DownloadProxy.m */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		93AFC57E25B0480F00B4C2E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93AFC57F25B0487500B4C2E5 /* UserDataModel.h */,
+				93AFC58025B0487500B4C2E5 /* UserDataModel.m */,
+				93AFC58225B048A300B4C2E5 /* FriendModel.h */,
+				93AFC58325B048A300B4C2E5 /* FriendModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93AFC58525B049D800B4C2E5 /* DataProccess */ = {
+			isa = PBXGroup;
+			children = (
+				93AFC58625B049FB00B4C2E5 /* ReponseHelper.h */,
+				93AFC58725B049FB00B4C2E5 /* ReponseHelper.m */,
+			);
+			path = DataProccess;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93AFC58825B049FB00B4C2E5 /* ReponseHelper.m in Sources */,
+				93AFC58425B048A300B4C2E5 /* FriendModel.m in Sources */,
+				93AFC58125B0487500B4C2E5 /* UserDataModel.m in Sources */,
 				93AFC54C25B0402100B4C2E5 /* ViewController.m in Sources */,
 				93AFC55725B0402200B4C2E5 /* main.m in Sources */,
 				93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */,
+				93AFC58B25B04A5E00B4C2E5 /* DownloadProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
