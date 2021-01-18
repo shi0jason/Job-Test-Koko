@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  KokoJob
 //
 //  Created by Jason on 2021/1/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 
 
 @end
