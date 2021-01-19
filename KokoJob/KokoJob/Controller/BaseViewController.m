@@ -20,6 +20,11 @@
 }
 
 - (void)setupNavigationBarItem {
+    [self.navigationController.navigationBar setTintColor: UIColor.redColor];
+    [self.navigationController.navigationBar setTranslucent: false];
+    [self.navigationController.navigationBar setBackgroundImage: [UIImage new] forBarMetrics: UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage: [UIImage new]];
+    
     self.navigationController.navigationBar.topItem.leftBarButtonItems = @[
                                                                            [self customBarButtonItem: @"icNavPinkWithdraw"],
                                                                            [self customBarButtonItem: @"icNavPinkTransfer"]

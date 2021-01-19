@@ -177,16 +177,8 @@
 			children = (
 				93AFC57C25B047F000B4C2E5 /* Cell */,
 				93AFC57B25B047E600B4C2E5 /* TableView */,
-				93AFC57A25B047D900B4C2E5 /* Tabber */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		93AFC57A25B047D900B4C2E5 /* Tabber */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tabber;
 			sourceTree = "<group>";
 		};
 		93AFC57B25B047E600B4C2E5 /* TableView */ = {
