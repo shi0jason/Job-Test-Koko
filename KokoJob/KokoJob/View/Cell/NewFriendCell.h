@@ -1,5 +1,5 @@
 //
-//  NoneFriendCell.h
+//  NewFriendCell.h
 //  KokoJob
 //
 //  Created by Jason on 2021/1/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoneFriendCell : UICollectionViewCell
+@interface NewFriendCell : UICollectionViewCell
 
 @end
 

@@ -2,8 +2,8 @@
 //  NoneFriendCell.m
 //  KokoJob
 //
-//  Created by 施崇邑 on 2021/1/19.
-//  Copyright © 2021 施崇邑. All rights reserved.
+//  Created by Jason on 2021/1/19.
+//  Copyright © 2021 Jason. All rights reserved.
 //
 
 #import "NoneFriendCell.h"

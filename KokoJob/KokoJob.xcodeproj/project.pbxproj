@@ -16,6 +16,14 @@
 		9314A00525B7122400046093 /* ChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A00325B7122400046093 /* ChatContentCell.xib */; };
 		9314A00925B712DC00046093 /* NoneFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A00725B712DC00046093 /* NoneFriendCell.m */; };
 		9314A00A25B712DC00046093 /* NoneFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A00825B712DC00046093 /* NoneFriendCell.xib */; };
+		9314A00E25B7206E00046093 /* TabSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A00C25B7206E00046093 /* TabSwitchCell.m */; };
+		9314A00F25B7206E00046093 /* TabSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A00D25B7206E00046093 /* TabSwitchCell.xib */; };
+		9314A01325B7208800046093 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A01125B7208800046093 /* SearchCell.m */; };
+		9314A01425B7208800046093 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A01225B7208800046093 /* SearchCell.xib */; };
+		9314A01825B720E500046093 /* NewFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A01625B720E500046093 /* NewFriendCell.m */; };
+		9314A01925B720E500046093 /* NewFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A01725B720E500046093 /* NewFriendCell.xib */; };
+		9314A01D25B7210600046093 /* ExistFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A01B25B7210600046093 /* ExistFriendCell.m */; };
+		9314A01E25B7210600046093 /* ExistFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A01C25B7210600046093 /* ExistFriendCell.xib */; };
 		93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC54825B0402100B4C2E5 /* AppDelegate.m */; };
 		93AFC54C25B0402100B4C2E5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC54B25B0402100B4C2E5 /* MainViewController.m */; };
 		93AFC54F25B0402100B4C2E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AFC54D25B0402100B4C2E5 /* Main.storyboard */; };
@@ -63,6 +71,18 @@
 		9314A00625B712DC00046093 /* NoneFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoneFriendCell.h; sourceTree = "<group>"; };
 		9314A00725B712DC00046093 /* NoneFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoneFriendCell.m; sourceTree = "<group>"; };
 		9314A00825B712DC00046093 /* NoneFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneFriendCell.xib; sourceTree = "<group>"; };
+		9314A00B25B7206E00046093 /* TabSwitchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabSwitchCell.h; sourceTree = "<group>"; };
+		9314A00C25B7206E00046093 /* TabSwitchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabSwitchCell.m; sourceTree = "<group>"; };
+		9314A00D25B7206E00046093 /* TabSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabSwitchCell.xib; sourceTree = "<group>"; };
+		9314A01025B7208800046093 /* SearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
+		9314A01125B7208800046093 /* SearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
+		9314A01225B7208800046093 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		9314A01525B720E500046093 /* NewFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewFriendCell.h; sourceTree = "<group>"; };
+		9314A01625B720E500046093 /* NewFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewFriendCell.m; sourceTree = "<group>"; };
+		9314A01725B720E500046093 /* NewFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFriendCell.xib; sourceTree = "<group>"; };
+		9314A01A25B7210600046093 /* ExistFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExistFriendCell.h; sourceTree = "<group>"; };
+		9314A01B25B7210600046093 /* ExistFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExistFriendCell.m; sourceTree = "<group>"; };
+		9314A01C25B7210600046093 /* ExistFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExistFriendCell.xib; sourceTree = "<group>"; };
 		93AFC54425B0402100B4C2E5 /* KokoJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KokoJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AFC54725B0402100B4C2E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93AFC54825B0402100B4C2E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -206,15 +226,27 @@
 		93AFC57C25B047F000B4C2E5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				93149FFC25B70C2C00046093 /* UserCell.h */,
-				93149FFD25B70C2C00046093 /* UserCell.m */,
-				93149FFE25B70C2C00046093 /* UserCell.xib */,
 				9314A00125B7122400046093 /* ChatContentCell.h */,
 				9314A00225B7122400046093 /* ChatContentCell.m */,
 				9314A00325B7122400046093 /* ChatContentCell.xib */,
+				93149FFC25B70C2C00046093 /* UserCell.h */,
+				93149FFD25B70C2C00046093 /* UserCell.m */,
+				93149FFE25B70C2C00046093 /* UserCell.xib */,
 				9314A00625B712DC00046093 /* NoneFriendCell.h */,
 				9314A00725B712DC00046093 /* NoneFriendCell.m */,
 				9314A00825B712DC00046093 /* NoneFriendCell.xib */,
+				9314A00B25B7206E00046093 /* TabSwitchCell.h */,
+				9314A00C25B7206E00046093 /* TabSwitchCell.m */,
+				9314A00D25B7206E00046093 /* TabSwitchCell.xib */,
+				9314A01025B7208800046093 /* SearchCell.h */,
+				9314A01125B7208800046093 /* SearchCell.m */,
+				9314A01225B7208800046093 /* SearchCell.xib */,
+				9314A01525B720E500046093 /* NewFriendCell.h */,
+				9314A01625B720E500046093 /* NewFriendCell.m */,
+				9314A01725B720E500046093 /* NewFriendCell.xib */,
+				9314A01A25B7210600046093 /* ExistFriendCell.h */,
+				9314A01B25B7210600046093 /* ExistFriendCell.m */,
+				9314A01C25B7210600046093 /* ExistFriendCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -354,10 +386,14 @@
 			files = (
 				9314A00025B70C2C00046093 /* UserCell.xib in Resources */,
 				93AFC55425B0402200B4C2E5 /* LaunchScreen.storyboard in Resources */,
+				9314A01925B720E500046093 /* NewFriendCell.xib in Resources */,
 				93AFC55125B0402200B4C2E5 /* Assets.xcassets in Resources */,
 				9314A00A25B712DC00046093 /* NoneFriendCell.xib in Resources */,
 				93AFC54F25B0402100B4C2E5 /* Main.storyboard in Resources */,
+				9314A01425B7208800046093 /* SearchCell.xib in Resources */,
 				9314A00525B7122400046093 /* ChatContentCell.xib in Resources */,
+				9314A00F25B7206E00046093 /* TabSwitchCell.xib in Resources */,
+				9314A01E25B7210600046093 /* ExistFriendCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +422,7 @@
 				93AFC58425B048A300B4C2E5 /* FriendModel.m in Sources */,
 				93149FFB25B7033100046093 /* BaseViewController.m in Sources */,
 				93AFC58125B0487500B4C2E5 /* UserDataModel.m in Sources */,
+				9314A01D25B7210600046093 /* ExistFriendCell.m in Sources */,
 				93149FF525B50E0400046093 /* OtherViewController.m in Sources */,
 				93AFC54C25B0402100B4C2E5 /* MainViewController.m in Sources */,
 				93AFC55725B0402200B4C2E5 /* main.m in Sources */,
@@ -393,6 +430,9 @@
 				93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */,
 				93149FF225B443DC00046093 /* HostTabViewController.m in Sources */,
 				93149FFF25B70C2C00046093 /* UserCell.m in Sources */,
+				9314A00E25B7206E00046093 /* TabSwitchCell.m in Sources */,
+				9314A01825B720E500046093 /* NewFriendCell.m in Sources */,
+				9314A01325B7208800046093 /* SearchCell.m in Sources */,
 				93AFC58B25B04A5E00B4C2E5 /* DownloadProxy.m in Sources */,
 				9314A00925B712DC00046093 /* NoneFriendCell.m in Sources */,
 			);

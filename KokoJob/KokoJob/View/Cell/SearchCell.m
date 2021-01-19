@@ -1,14 +1,14 @@
 //
-//  ChatContentCell.m
+//  SearchCell.m
 //  KokoJob
 //
 //  Created by Jason on 2021/1/19.
 //  Copyright © 2021 Jason. All rights reserved.
 //
 
-#import "ChatContentCell.h"
+#import "SearchCell.h"
 
-@implementation ChatContentCell
+@implementation SearchCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -1,14 +1,14 @@
 //
-//  ChatContentCell.m
+//  TabSwitchCell.m
 //  KokoJob
 //
 //  Created by Jason on 2021/1/19.
 //  Copyright © 2021 Jason. All rights reserved.
 //
 
-#import "ChatContentCell.h"
+#import "TabSwitchCell.h"
 
-@implementation ChatContentCell
+@implementation TabSwitchCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
