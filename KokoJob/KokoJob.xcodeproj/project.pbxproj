@@ -12,8 +12,6 @@
 		93149FFB25B7033100046093 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93149FFA25B7033100046093 /* BaseViewController.m */; };
 		93149FFF25B70C2C00046093 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93149FFD25B70C2C00046093 /* UserCell.m */; };
 		9314A00025B70C2C00046093 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93149FFE25B70C2C00046093 /* UserCell.xib */; };
-		9314A00425B7122400046093 /* ChatContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A00225B7122400046093 /* ChatContentCell.m */; };
-		9314A00525B7122400046093 /* ChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A00325B7122400046093 /* ChatContentCell.xib */; };
 		9314A00925B712DC00046093 /* NoneFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A00725B712DC00046093 /* NoneFriendCell.m */; };
 		9314A00A25B712DC00046093 /* NoneFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A00825B712DC00046093 /* NoneFriendCell.xib */; };
 		9314A00E25B7206E00046093 /* TabSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A00C25B7206E00046093 /* TabSwitchCell.m */; };
@@ -65,9 +63,6 @@
 		93149FFC25B70C2C00046093 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
 		93149FFD25B70C2C00046093 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
 		93149FFE25B70C2C00046093 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
-		9314A00125B7122400046093 /* ChatContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatContentCell.h; sourceTree = "<group>"; };
-		9314A00225B7122400046093 /* ChatContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatContentCell.m; sourceTree = "<group>"; };
-		9314A00325B7122400046093 /* ChatContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatContentCell.xib; sourceTree = "<group>"; };
 		9314A00625B712DC00046093 /* NoneFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoneFriendCell.h; sourceTree = "<group>"; };
 		9314A00725B712DC00046093 /* NoneFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoneFriendCell.m; sourceTree = "<group>"; };
 		9314A00825B712DC00046093 /* NoneFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneFriendCell.xib; sourceTree = "<group>"; };
@@ -226,9 +221,6 @@
 		93AFC57C25B047F000B4C2E5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				9314A00125B7122400046093 /* ChatContentCell.h */,
-				9314A00225B7122400046093 /* ChatContentCell.m */,
-				9314A00325B7122400046093 /* ChatContentCell.xib */,
 				93149FFC25B70C2C00046093 /* UserCell.h */,
 				93149FFD25B70C2C00046093 /* UserCell.m */,
 				93149FFE25B70C2C00046093 /* UserCell.xib */,
@@ -391,7 +383,6 @@
 				9314A00A25B712DC00046093 /* NoneFriendCell.xib in Resources */,
 				93AFC54F25B0402100B4C2E5 /* Main.storyboard in Resources */,
 				9314A01425B7208800046093 /* SearchCell.xib in Resources */,
-				9314A00525B7122400046093 /* ChatContentCell.xib in Resources */,
 				9314A00F25B7206E00046093 /* TabSwitchCell.xib in Resources */,
 				9314A01E25B7210600046093 /* ExistFriendCell.xib in Resources */,
 			);
@@ -426,7 +417,6 @@
 				93149FF525B50E0400046093 /* OtherViewController.m in Sources */,
 				93AFC54C25B0402100B4C2E5 /* MainViewController.m in Sources */,
 				93AFC55725B0402200B4C2E5 /* main.m in Sources */,
-				9314A00425B7122400046093 /* ChatContentCell.m in Sources */,
 				93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */,
 				93149FF225B443DC00046093 /* HostTabViewController.m in Sources */,
 				93149FFF25B70C2C00046093 /* UserCell.m in Sources */,
