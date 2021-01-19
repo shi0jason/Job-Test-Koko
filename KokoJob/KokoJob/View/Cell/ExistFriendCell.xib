@@ -44,6 +44,9 @@
                         <state key="normal" title="轉帳">
                             <color key="titleColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="transterCoin:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ffZ-6M-Tz5"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaZ-q0-lcZ">
                         <rect key="frame" x="295" y="18" width="60" height="24"/>
@@ -54,6 +57,9 @@
                         <state key="normal" title="邀請中">
                             <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="inviteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="QcG-nR-EMC"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -68,6 +74,10 @@
                 <constraint firstItem="kPp-5V-hnh" firstAttribute="centerY" secondItem="bil-yl-MxW" secondAttribute="centerY" id="xDx-gY-eIJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="iconImageView" destination="bil-yl-MxW" id="Lx1-Cx-TBX"/>
+                <outlet property="nameLabel" destination="kPp-5V-hnh" id="g4y-42-jJc"/>
+            </connections>
         </collectionViewCell>
     </objects>
     <resources>

@@ -50,6 +50,18 @@
                             <constraint firstAttribute="width" constant="30" id="lAL-Xo-Fxk"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-dR-ZxD">
+                        <rect key="frame" x="255" y="15" width="30" height="30"/>
+                        <connections>
+                            <action selector="agreeAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="CMh-Sf-g5z"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkk-c4-I4J">
+                        <rect key="frame" x="300" y="15" width="30" height="30"/>
+                        <connections>
+                            <action selector="deleteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="YKM-to-puz"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀請你成為好友：）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsY-yN-xww">
                         <rect key="frame" x="100" y="34" width="156" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -60,18 +72,31 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="CsY-yN-xww" secondAttribute="bottom" id="7pv-bb-vHq"/>
+                <constraint firstItem="ak2-dR-ZxD" firstAttribute="centerX" secondItem="Bri-cO-bEQ" secondAttribute="centerX" id="9ME-BY-wuc"/>
                 <constraint firstItem="SEy-5g-ep8" firstAttribute="trailing" secondItem="qpS-XZ-F4M" secondAttribute="trailing" constant="45" id="9tz-R4-03H"/>
                 <constraint firstItem="CsY-yN-xww" firstAttribute="leading" secondItem="JeD-j7-umL" secondAttribute="trailing" constant="15" id="E9X-4O-Rlg"/>
                 <constraint firstItem="JeD-j7-umL" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="E9x-lv-l94"/>
+                <constraint firstItem="Tkk-c4-I4J" firstAttribute="width" secondItem="qpS-XZ-F4M" secondAttribute="width" id="FaU-Kw-xNz"/>
+                <constraint firstItem="ak2-dR-ZxD" firstAttribute="width" secondItem="Bri-cO-bEQ" secondAttribute="width" id="J0Q-4r-Zb2"/>
+                <constraint firstItem="ak2-dR-ZxD" firstAttribute="centerY" secondItem="Bri-cO-bEQ" secondAttribute="centerY" id="NoW-su-SnC"/>
                 <constraint firstItem="CsY-yN-xww" firstAttribute="top" secondItem="LVS-HQ-8Q3" secondAttribute="bottom" constant="2" id="OZe-Fj-Rvh"/>
                 <constraint firstItem="LVS-HQ-8Q3" firstAttribute="leading" secondItem="JeD-j7-umL" secondAttribute="trailing" constant="15" id="SpQ-RT-vxK"/>
+                <constraint firstItem="Tkk-c4-I4J" firstAttribute="height" secondItem="qpS-XZ-F4M" secondAttribute="height" id="T62-Qd-2T4"/>
+                <constraint firstItem="Tkk-c4-I4J" firstAttribute="centerX" secondItem="qpS-XZ-F4M" secondAttribute="centerX" id="TRI-L7-AxB"/>
                 <constraint firstItem="Bri-cO-bEQ" firstAttribute="centerY" secondItem="qpS-XZ-F4M" secondAttribute="centerY" id="eDT-uh-liD"/>
+                <constraint firstItem="ak2-dR-ZxD" firstAttribute="height" secondItem="Bri-cO-bEQ" secondAttribute="height" id="jNj-BJ-RKA"/>
                 <constraint firstItem="qpS-XZ-F4M" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="kLv-dy-vSd"/>
+                <constraint firstItem="Tkk-c4-I4J" firstAttribute="centerY" secondItem="qpS-XZ-F4M" secondAttribute="centerY" id="muN-TC-QKC"/>
                 <constraint firstItem="LVS-HQ-8Q3" firstAttribute="top" secondItem="JeD-j7-umL" secondAttribute="top" id="xSv-cr-7b1"/>
                 <constraint firstItem="qpS-XZ-F4M" firstAttribute="leading" secondItem="Bri-cO-bEQ" secondAttribute="trailing" constant="15" id="z67-M9-Aal"/>
                 <constraint firstItem="JeD-j7-umL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="45" id="zXd-1d-ZyD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="iconImageView" destination="JeD-j7-umL" id="GVX-h0-ixU"/>
+                <outlet property="nameLabel" destination="LVS-HQ-8Q3" id="ne2-hQ-leh"/>
+            </connections>
+            <point key="canvasLocation" x="44.20289855072464" y="39.508928571428569"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -8,11 +8,25 @@
 
 #import "NewFriendCell.h"
 
+@interface NewFriendCell()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@end
+
 @implementation NewFriendCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+- (IBAction)agreeAction:(id)sender {
+
+}
+
+- (IBAction)deleteAction:(id)sender {
+
 }
 
 @end
