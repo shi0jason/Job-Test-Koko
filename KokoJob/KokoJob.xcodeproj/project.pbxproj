@@ -10,6 +10,12 @@
 		93149FF225B443DC00046093 /* HostTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93149FF125B443DC00046093 /* HostTabViewController.m */; };
 		93149FF525B50E0400046093 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93149FF425B50E0400046093 /* OtherViewController.m */; };
 		93149FFB25B7033100046093 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93149FFA25B7033100046093 /* BaseViewController.m */; };
+		93149FFF25B70C2C00046093 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93149FFD25B70C2C00046093 /* UserCell.m */; };
+		9314A00025B70C2C00046093 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93149FFE25B70C2C00046093 /* UserCell.xib */; };
+		9314A00425B7122400046093 /* ChatContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A00225B7122400046093 /* ChatContentCell.m */; };
+		9314A00525B7122400046093 /* ChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A00325B7122400046093 /* ChatContentCell.xib */; };
+		9314A00925B712DC00046093 /* NoneFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A00725B712DC00046093 /* NoneFriendCell.m */; };
+		9314A00A25B712DC00046093 /* NoneFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A00825B712DC00046093 /* NoneFriendCell.xib */; };
 		93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC54825B0402100B4C2E5 /* AppDelegate.m */; };
 		93AFC54C25B0402100B4C2E5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC54B25B0402100B4C2E5 /* MainViewController.m */; };
 		93AFC54F25B0402100B4C2E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AFC54D25B0402100B4C2E5 /* Main.storyboard */; };
@@ -48,6 +54,15 @@
 		93149FF425B50E0400046093 /* OtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		93149FF925B7033100046093 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		93149FFA25B7033100046093 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		93149FFC25B70C2C00046093 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		93149FFD25B70C2C00046093 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
+		93149FFE25B70C2C00046093 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		9314A00125B7122400046093 /* ChatContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatContentCell.h; sourceTree = "<group>"; };
+		9314A00225B7122400046093 /* ChatContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatContentCell.m; sourceTree = "<group>"; };
+		9314A00325B7122400046093 /* ChatContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatContentCell.xib; sourceTree = "<group>"; };
+		9314A00625B712DC00046093 /* NoneFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoneFriendCell.h; sourceTree = "<group>"; };
+		9314A00725B712DC00046093 /* NoneFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoneFriendCell.m; sourceTree = "<group>"; };
+		9314A00825B712DC00046093 /* NoneFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneFriendCell.xib; sourceTree = "<group>"; };
 		93AFC54425B0402100B4C2E5 /* KokoJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KokoJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AFC54725B0402100B4C2E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93AFC54825B0402100B4C2E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -191,6 +206,15 @@
 		93AFC57C25B047F000B4C2E5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				93149FFC25B70C2C00046093 /* UserCell.h */,
+				93149FFD25B70C2C00046093 /* UserCell.m */,
+				93149FFE25B70C2C00046093 /* UserCell.xib */,
+				9314A00125B7122400046093 /* ChatContentCell.h */,
+				9314A00225B7122400046093 /* ChatContentCell.m */,
+				9314A00325B7122400046093 /* ChatContentCell.xib */,
+				9314A00625B712DC00046093 /* NoneFriendCell.h */,
+				9314A00725B712DC00046093 /* NoneFriendCell.m */,
+				9314A00825B712DC00046093 /* NoneFriendCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -328,9 +352,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9314A00025B70C2C00046093 /* UserCell.xib in Resources */,
 				93AFC55425B0402200B4C2E5 /* LaunchScreen.storyboard in Resources */,
 				93AFC55125B0402200B4C2E5 /* Assets.xcassets in Resources */,
+				9314A00A25B712DC00046093 /* NoneFriendCell.xib in Resources */,
 				93AFC54F25B0402100B4C2E5 /* Main.storyboard in Resources */,
+				9314A00525B7122400046093 /* ChatContentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,9 +389,12 @@
 				93149FF525B50E0400046093 /* OtherViewController.m in Sources */,
 				93AFC54C25B0402100B4C2E5 /* MainViewController.m in Sources */,
 				93AFC55725B0402200B4C2E5 /* main.m in Sources */,
+				9314A00425B7122400046093 /* ChatContentCell.m in Sources */,
 				93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */,
 				93149FF225B443DC00046093 /* HostTabViewController.m in Sources */,
+				93149FFF25B70C2C00046093 /* UserCell.m in Sources */,
 				93AFC58B25B04A5E00B4C2E5 /* DownloadProxy.m in Sources */,
+				9314A00925B712DC00046093 /* NoneFriendCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
