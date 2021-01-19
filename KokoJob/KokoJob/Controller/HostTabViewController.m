@@ -20,7 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTabbarTopLine];
     [self setupTabbarItem];
+}
+
+- (void)setupTabbarTopLine {
+    [UITabBar appearance].shadowImage = [UIImage new];
+    [UITabBar appearance].backgroundImage = [UIImage new];
+    [UITabBar appearance].backgroundColor = UIColor.whiteColor;
 }
 
 - (void)setupTabbarItem {
@@ -40,14 +47,17 @@
                                                                   image: [[UIImage imageNamed: imageString] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
                                                                     tag: i];
             mainVC.tabBarItem = barItem;
-            [vcList addObject: [[UINavigationController alloc] initWithRootViewController: mainVC]];
+            UINavigationController *vc = [[UINavigationController alloc] initWithRootViewController: mainVC];
+            vc.modalPresentationStyle = UIModalPresentationNone;
+            [vcList addObject: vc];
         } else {
             OtherViewController *otherVC = [[OtherViewController alloc] init];
             UITabBarItem *barItem = [[UITabBarItem alloc] initWithTitle: nil
                                                                   image: [[UIImage imageNamed: imageString] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
                                                                     tag: i];
             otherVC.tabBarItem = barItem;
-            [vcList addObject: [[UINavigationController alloc] initWithRootViewController: otherVC]];
+            UINavigationController *vc = [[UINavigationController alloc] initWithRootViewController: otherVC];
+            [vcList addObject: vc];
         }
     }
     self.viewControllers = vcList;
