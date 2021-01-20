@@ -2,8 +2,8 @@
 //  MainViewModel.h
 //  KokoJob
 //
-//  Created by 施崇邑 on 2021/1/20.
-//  Copyright © 2021 施崇邑. All rights reserved.
+//  Created by Jason on 2021/1/20.
+//  Copyright © 2021 Jason. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UserDataModel *userModel;
 @property (strong, nonatomic) NSMutableArray<FriendModel* > *friendModelList;
+
+- (NSArray *)getCollectionType;
+- (NSUInteger)numberOfSections;
 
 @end
 

@@ -8,6 +8,12 @@
 
 #import "MainViewController.h"
 #import "DownloadProxy.h"
+#import "UserCell.h"
+#import "NoneFriendCell.h"
+#import "TabSwitchCell.h"
+#import "SearchCell.h"
+#import "NewFriendCell.h"
+#import "ExistFriendCell.h"
 
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -46,15 +52,14 @@
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
     
-    [self.collectionView registerClass: [UICollectionViewCell class]
-       forCellWithReuseIdentifier: cellIdentifer];
+    [self.collectionView registerClass: [UICollectionViewCell class] forCellWithReuseIdentifier: cellIdentifer];
 
-    [self.collectionView registerNib: [UINib nibWithNibName: userCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: userCell];
-    [self.collectionView registerNib: [UINib nibWithNibName: noneFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: noneFriendCell];
-    [self.collectionView registerNib: [UINib nibWithNibName: tabSwitchCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: tabSwitchCell];
-    [self.collectionView registerNib: [UINib nibWithNibName: searchCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: searchCell];
-    [self.collectionView registerNib: [UINib nibWithNibName: newFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: newFriendCell];
-    [self.collectionView registerNib: [UINib nibWithNibName: existFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: existFriendCell];
+    [self.collectionView registerClass: [UserCell class] forCellWithReuseIdentifier: userCell];
+    [self.collectionView registerClass: [NoneFriendCell class] forCellWithReuseIdentifier: noneFriendCell];
+    [self.collectionView registerClass: [TabSwitchCell class] forCellWithReuseIdentifier: tabSwitchCell];
+    [self.collectionView registerClass: [SearchCell class] forCellWithReuseIdentifier: searchCell];
+    [self.collectionView registerClass: [NewFriendCell class] forCellWithReuseIdentifier: newFriendCell];
+    [self.collectionView registerClass: [ExistFriendCell class] forCellWithReuseIdentifier: existFriendCell];
     
     [self.collectionView setBackgroundColor:[UIColor redColor]];
     [self.view addSubview: self.collectionView];
@@ -62,17 +67,44 @@
 
 - (NSInteger)collectionView:(UICollectionView *) collectionView
      numberOfItemsInSection:(NSInteger) section {
-    return 15;
+    return self.viewModel.numberOfSections;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *) collectionView
                   cellForItemAtIndexPath:(NSIndexPath *) indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: cellIdentifer
-                                                                           forIndexPath: indexPath];
-    
-    cell.backgroundColor = [UIColor greenColor];
-    return cell;
+    id object = self.viewModel.getCollectionType[indexPath.item];
+    if ([object isKindOfClass:[NSString class]]) {
+        if ([object isEqualToString: userCell]) {
+            UserCell *cell = (UserCell *)[collectionView dequeueReusableCellWithReuseIdentifier: userCell forIndexPath:indexPath];
+            return cell;
+        } else if ([object isEqualToString: noneFriendCell]) {
+            NoneFriendCell *cell = (NoneFriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier: noneFriendCell forIndexPath:indexPath];
+            return cell;
+        } else if ([object isEqualToString: tabSwitchCell]) {
+            TabSwitchCell *cell = (TabSwitchCell *)[collectionView dequeueReusableCellWithReuseIdentifier: tabSwitchCell forIndexPath:indexPath];
+            return cell;
+        } else if ([object isEqualToString: searchCell]) {
+            SearchCell *cell = (SearchCell *)[collectionView dequeueReusableCellWithReuseIdentifier: searchCell forIndexPath:indexPath];
+            return cell;
+        }
+    } else if ([object isKindOfClass:[FriendModel class]]) {
+        FriendModel *model = object;
+        if (model.status == 0) {
+            NewFriendCell *cell = (NewFriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier: newFriendCell forIndexPath:indexPath];
+            return cell;
+        } else if (model.status == 1) {
+            ExistFriendCell *cell = (ExistFriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier: existFriendCell forIndexPath:indexPath];
+            return cell;
+        }
+        
+    }
+//        UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: cellIdentifer
+//                                                                               forIndexPath: indexPath];
+//
+//        return cell;
+    return [collectionView dequeueReusableCellWithReuseIdentifier: cellIdentifer
+                                                     forIndexPath: indexPath];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView

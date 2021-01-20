@@ -2,8 +2,8 @@
 //  MainViewModel.m
 //  KokoJob
 //
-//  Created by 施崇邑 on 2021/1/20.
-//  Copyright © 2021 施崇邑. All rights reserved.
+//  Created by Jason on 2021/1/20.
+//  Copyright © 2021 Jason. All rights reserved.
 //
 
 #import "MainViewModel.h"
@@ -23,29 +23,29 @@
     
     NSMutableArray *inviteList = @[].mutableCopy;
     NSMutableArray *existFriendList = @[].mutableCopy;
+    
     self.cotentList = @[].mutableCopy;
     
-    for (FriendModel *model in self.friendModelList) {
+    for (FriendModel *model in prcessFriendModelList) {
         if (model.status == 0) {
-            
+            [inviteList addObject: model];
+        } else {
+            [existFriendList addObject: model];
         }
     }
+    [self.cotentList addObject: userCell];
+    [self.cotentList addObjectsFromArray: inviteList];
+    [self.cotentList addObject: tabSwitchCell];
+    [self.cotentList addObjectsFromArray: existFriendList];
+    [self.cotentList addObject: dataState == ProxyNoFriendAndInviteState ? noneFriendCell : searchCell];
 }
 
-- (int)numberOfSections {
-    switch (dataState) {
-        case ProxyNoFriendAndInviteState:
-//            NSArray *list = @[userCell, tabSwitchCell, noneFriendCell];
-            return 0;
-        case ProxyHaveFriendAndNOInviteState:
-//            NSArray *list = @[userCell, tabSwitchCell, searchCell];
-            return 0;
-        case ProxyHaveFriendAndInviteState:
-//            NSArray *list = @[userCell, tabSwitchCell, searchCell];
-            return 0;
-        default:
-            return 0;
-    }
+- (NSArray *)getCollectionType {
+    return self.cotentList.copy;
+}
+
+- (NSUInteger)numberOfSections {
+    return self.cotentList.count;
 }
 
 @end
