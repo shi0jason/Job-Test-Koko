@@ -29,7 +29,6 @@
         [self.inviteButton setTitle: @"" forState: UIControlStateNormal];
         [self.inviteButton setImage: [[UIImage imageNamed: @"icFriendsMore"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
                            forState: UIControlStateNormal];
-//        [[UIImage imageNamed: imageString] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
     }
 }
 
