@@ -18,12 +18,12 @@ static NSString *friendList3 = @"https://dimanyen.github.io/friend3.json";
 static NSString *emptyData = @"https://dimanyen.github.io/friend4.json";
 
 #define cellIdentifer @"Cell"
-#define userCell @"userCell"
-#define noneFriendCell @"noneFriendCell"
-#define tabSwitchCell @"tabSwitchCell"
-#define searchCell @"searchCell"
-#define newFriendCell @"newFriendCell"
-#define existFriendCell @"existFriendCell"
+#define userCell @"UserCell"
+#define noneFriendCell @"NoneFriendCell"
+#define tabSwitchCell @"TabSwitchCell"
+#define searchCell @"SearchCell"
+#define newFriendCell @"NewFriendCell"
+#define existFriendCell @"ExistFriendCell"
 
 typedef NS_ENUM(NSUInteger, DownloadProxyState) {
     ProxyNoFriendAndInviteState = 0,
@@ -31,6 +31,6 @@ typedef NS_ENUM(NSUInteger, DownloadProxyState) {
     ProxyHaveFriendAndInviteState
 };
 
-#define dataState ProxyHaveFriendAndInviteState
+#define dataState ProxyHaveFriendAndNOInviteState
 
 #endif /* RequestList_h */

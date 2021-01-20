@@ -16,16 +16,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KokoJob/Controller/MainViewController.m"
-            timestampString = "632835076.3390861"
+            filePath = "KokoJob/Model/MainViewModel.m"
+            timestampString = "632840535.3638819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-collectionView:numberOfItemsInSection:"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-getCollectionType"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

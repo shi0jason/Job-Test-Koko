@@ -85,7 +85,9 @@
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <connections>
                 <outlet property="iconImageView" destination="bil-yl-MxW" id="Lx1-Cx-TBX"/>
+                <outlet property="inviteButton" destination="ZaZ-q0-lcZ" id="Wyb-WU-9bm"/>
                 <outlet property="nameLabel" destination="kPp-5V-hnh" id="g4y-42-jJc"/>
+                <outlet property="starImageView" destination="x8h-7C-IKF" id="rm1-BR-Jmh"/>
             </connections>
         </collectionViewCell>
     </objects>

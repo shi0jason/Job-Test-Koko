@@ -16,9 +16,8 @@
 
 @implementation NewFriendCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)configure:(FriendModel *)model {
+    [self.nameLabel setText: model.name];
 }
 
 - (IBAction)agreeAction:(id)sender {

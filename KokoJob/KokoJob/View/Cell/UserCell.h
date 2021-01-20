@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UserCell : UICollectionViewCell
+
+- (void)configure:(UserDataModel *)model;
 
 @end
 

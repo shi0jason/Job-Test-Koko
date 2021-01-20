@@ -36,13 +36,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4V-TM-tBy">
-                        <rect key="frame" x="30" y="26" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="30" y="26" width="33" height="18.5"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="13"/>
+                        <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoW-DB-8Sg">
-                        <rect key="frame" x="107" y="31.5" width="10" height="10"/>
+                        <rect key="frame" x="98" y="30.5" width="10" height="10"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="LnI-V4-IdB"/>
@@ -51,7 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="bml-cH-HwB"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icInfoBackDeepGray" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-3r-oq0">
-                        <rect key="frame" x="76" y="28.5" width="16" height="16"/>
+                        <rect key="frame" x="67" y="27.5" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="LW3-6x-jDt"/>
                             <constraint firstAttribute="width" constant="16" id="a5f-3M-tq2"/>

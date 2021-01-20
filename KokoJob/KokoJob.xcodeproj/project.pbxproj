@@ -23,6 +23,7 @@
 		9314A01D25B7210600046093 /* ExistFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A01B25B7210600046093 /* ExistFriendCell.m */; };
 		9314A01E25B7210600046093 /* ExistFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A01C25B7210600046093 /* ExistFriendCell.xib */; };
 		9314A02125B7EA5E00046093 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A02025B7EA5E00046093 /* MainViewModel.m */; };
+		9314A02325B8607800046093 /* icFriendsMore@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9314A02225B8607800046093 /* icFriendsMore@3x.png */; };
 		93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC54825B0402100B4C2E5 /* AppDelegate.m */; };
 		93AFC54C25B0402100B4C2E5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC54B25B0402100B4C2E5 /* MainViewController.m */; };
 		93AFC54F25B0402100B4C2E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AFC54D25B0402100B4C2E5 /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		9314A01C25B7210600046093 /* ExistFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExistFriendCell.xib; sourceTree = "<group>"; };
 		9314A01F25B7EA5E00046093 /* MainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
 		9314A02025B7EA5E00046093 /* MainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
+		9314A02225B8607800046093 /* icFriendsMore@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icFriendsMore@3x.png"; sourceTree = "<group>"; };
 		93AFC54425B0402100B4C2E5 /* KokoJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KokoJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AFC54725B0402100B4C2E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93AFC54825B0402100B4C2E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				93AFC54725B0402100B4C2E5 /* AppDelegate.h */,
 				93AFC54825B0402100B4C2E5 /* AppDelegate.m */,
 				93AFC54D25B0402100B4C2E5 /* Main.storyboard */,
+				9314A02225B8607800046093 /* icFriendsMore@3x.png */,
 				93AFC55025B0402200B4C2E5 /* Assets.xcassets */,
 				93AFC55225B0402200B4C2E5 /* LaunchScreen.storyboard */,
 				93AFC55525B0402200B4C2E5 /* Info.plist */,
@@ -209,16 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				93AFC57C25B047F000B4C2E5 /* Cell */,
-				93AFC57B25B047E600B4C2E5 /* TableView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		93AFC57B25B047E600B4C2E5 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableView;
 			sourceTree = "<group>";
 		};
 		93AFC57C25B047F000B4C2E5 /* Cell */ = {
@@ -389,6 +384,7 @@
 				93AFC54F25B0402100B4C2E5 /* Main.storyboard in Resources */,
 				9314A01425B7208800046093 /* SearchCell.xib in Resources */,
 				9314A00F25B7206E00046093 /* TabSwitchCell.xib in Resources */,
+				9314A02325B8607800046093 /* icFriendsMore@3x.png in Resources */,
 				9314A01E25B7210600046093 /* ExistFriendCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,17 +27,19 @@
     self.cotentList = @[].mutableCopy;
     
     for (FriendModel *model in prcessFriendModelList) {
-        if (model.status == 0) {
+        if (model.status == 2) {
             [inviteList addObject: model];
         } else {
             [existFriendList addObject: model];
         }
     }
-    [self.cotentList addObject: userCell];
+    if (_userModel) {
+        [self.cotentList addObject: _userModel];
+    }
     [self.cotentList addObjectsFromArray: inviteList];
     [self.cotentList addObject: tabSwitchCell];
-    [self.cotentList addObjectsFromArray: existFriendList];
     [self.cotentList addObject: dataState == ProxyNoFriendAndInviteState ? noneFriendCell : searchCell];
+    [self.cotentList addObjectsFromArray: existFriendList];
 }
 
 - (NSArray *)getCollectionType {

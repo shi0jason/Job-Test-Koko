@@ -27,10 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithRed: 250.0 / 255.0
-                                                green: 250.0 / 255.0
-                                                 blue: 250.0 / 255.0
-                                                alpha: 1.0];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self setupCollectionView];
     [self fetchData];
 }
@@ -54,15 +51,43 @@
     
     [self.collectionView registerClass: [UICollectionViewCell class] forCellWithReuseIdentifier: cellIdentifer];
 
-    [self.collectionView registerClass: [UserCell class] forCellWithReuseIdentifier: userCell];
-    [self.collectionView registerClass: [NoneFriendCell class] forCellWithReuseIdentifier: noneFriendCell];
-    [self.collectionView registerClass: [TabSwitchCell class] forCellWithReuseIdentifier: tabSwitchCell];
-    [self.collectionView registerClass: [SearchCell class] forCellWithReuseIdentifier: searchCell];
-    [self.collectionView registerClass: [NewFriendCell class] forCellWithReuseIdentifier: newFriendCell];
-    [self.collectionView registerClass: [ExistFriendCell class] forCellWithReuseIdentifier: existFriendCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: userCell bundle: nil] forCellWithReuseIdentifier: userCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: noneFriendCell bundle: nil] forCellWithReuseIdentifier: noneFriendCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: tabSwitchCell bundle: nil] forCellWithReuseIdentifier: tabSwitchCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: searchCell bundle: nil] forCellWithReuseIdentifier: searchCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: newFriendCell bundle: nil] forCellWithReuseIdentifier: newFriendCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: existFriendCell bundle: nil] forCellWithReuseIdentifier: existFriendCell];
     
-    [self.collectionView setBackgroundColor:[UIColor redColor]];
+    self.collectionView.backgroundColor = UIColor.whiteColor;
     [self.view addSubview: self.collectionView];
+    
+    self.collectionView.translatesAutoresizingMaskIntoConstraints = false;
+    [self.view addConstraints:@[
+                                [NSLayoutConstraint constraintWithItem: self.collectionView
+                                                             attribute: NSLayoutAttributeTop
+                                                             relatedBy: NSLayoutRelationEqual
+                                                                toItem: self.view
+                                                             attribute: NSLayoutAttributeTop
+                                                            multiplier: 1.0 constant: 50.0],
+                                [NSLayoutConstraint constraintWithItem: self.collectionView
+                                                             attribute: NSLayoutAttributeRight
+                                                             relatedBy: NSLayoutRelationEqual
+                                                                toItem: self.view
+                                                             attribute: NSLayoutAttributeRight
+                                                            multiplier: 1.0 constant: 0.0],
+                                [NSLayoutConstraint constraintWithItem: self.collectionView
+                                                             attribute: NSLayoutAttributeLeft
+                                                             relatedBy: NSLayoutRelationEqual
+                                                                toItem: self.view
+                                                             attribute: NSLayoutAttributeLeft
+                                                            multiplier: 1.0 constant: 0.0],
+                                [NSLayoutConstraint constraintWithItem: self.collectionView
+                                                             attribute: NSLayoutAttributeBottom
+                                                             relatedBy: NSLayoutRelationEqual
+                                                                toItem: self.view
+                                                             attribute: NSLayoutAttributeBottom
+                                                            multiplier: 1.0 constant: 0.0],
+                                ]];
 }
 
 - (NSInteger)collectionView:(UICollectionView *) collectionView
@@ -75,10 +100,7 @@
                   cellForItemAtIndexPath:(NSIndexPath *) indexPath {
     id object = self.viewModel.getCollectionType[indexPath.item];
     if ([object isKindOfClass:[NSString class]]) {
-        if ([object isEqualToString: userCell]) {
-            UserCell *cell = (UserCell *)[collectionView dequeueReusableCellWithReuseIdentifier: userCell forIndexPath:indexPath];
-            return cell;
-        } else if ([object isEqualToString: noneFriendCell]) {
+        if ([object isEqualToString: noneFriendCell]) {
             NoneFriendCell *cell = (NoneFriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier: noneFriendCell forIndexPath:indexPath];
             return cell;
         } else if ([object isEqualToString: tabSwitchCell]) {
@@ -88,28 +110,36 @@
             SearchCell *cell = (SearchCell *)[collectionView dequeueReusableCellWithReuseIdentifier: searchCell forIndexPath:indexPath];
             return cell;
         }
+    } else if ([object isKindOfClass:[UserDataModel class]]) {
+        UserDataModel *model = object;
+        UserCell *cell = (UserCell *)[collectionView dequeueReusableCellWithReuseIdentifier: userCell forIndexPath:indexPath];
+        [cell configure: model];
+        return cell;
     } else if ([object isKindOfClass:[FriendModel class]]) {
         FriendModel *model = object;
-        if (model.status == 0) {
+        if (model.status == 2) {
             NewFriendCell *cell = (NewFriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier: newFriendCell forIndexPath:indexPath];
+            [cell configure: model];
             return cell;
-        } else if (model.status == 1) {
+        } else if (model.status == 0 || model.status == 1) {
             ExistFriendCell *cell = (ExistFriendCell *)[collectionView dequeueReusableCellWithReuseIdentifier: existFriendCell forIndexPath:indexPath];
+            [cell configure: model];
             return cell;
         }
-        
     }
-//        UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: cellIdentifer
-//                                                                               forIndexPath: indexPath];
-//
-//        return cell;
-    return [collectionView dequeueReusableCellWithReuseIdentifier: cellIdentifer
-                                                     forIndexPath: indexPath];
+    return [collectionView dequeueReusableCellWithReuseIdentifier: cellIdentifer forIndexPath: indexPath];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout*) collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *) indexPath {
+    id object = self.viewModel.getCollectionType[indexPath.item];
+    if ([object isKindOfClass:[NSString class]] && [object isEqualToString: tabSwitchCell]) {
+        return CGSizeMake(self.view.frame.size.width, 30);
+    }
+    if ([object isKindOfClass:[NSString class]] && [object isEqualToString: noneFriendCell]) {
+        return CGSizeMake(self.view.frame.size.width, 350);
+    }
     return CGSizeMake(self.view.frame.size.width, 50);
 }
 @end

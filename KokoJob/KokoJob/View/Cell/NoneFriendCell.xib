@@ -60,6 +60,13 @@
                             <action selector="addFriend:" destination="gTV-IL-0wX" eventType="touchUpInside" id="TBP-H3-hYM"/>
                         </connections>
                     </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAddFriendWhite" translatesAutoresizingMaskIntoConstraints="NO" id="TOA-af-Ei6">
+                        <rect key="frame" x="250.5" y="364" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="PVV-ad-TNt"/>
+                            <constraint firstAttribute="width" constant="24" id="b3Z-wZ-cZL"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="幫助好友更快找到你？設定 KOKO ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEI-7E-0yF">
                         <rect key="frame" x="65" y="433" width="245" height="18"/>
                         <constraints>
@@ -76,8 +83,10 @@
                 <constraint firstItem="0T2-QO-u3t" firstAttribute="top" secondItem="fhO-vG-LQK" secondAttribute="bottom" constant="8" id="6zx-WB-4Y0"/>
                 <constraint firstItem="fhO-vG-LQK" firstAttribute="trailing" secondItem="zEi-fI-H9b" secondAttribute="trailing" id="7rQ-JR-mSl"/>
                 <constraint firstItem="0T2-QO-u3t" firstAttribute="leading" secondItem="zEi-fI-H9b" secondAttribute="leading" id="EsY-ef-pwU"/>
+                <constraint firstItem="TOA-af-Ei6" firstAttribute="centerY" secondItem="bB8-5s-8JR" secondAttribute="centerY" id="MHA-H5-anx"/>
                 <constraint firstItem="zEi-fI-H9b" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="UgZ-Mx-KiT"/>
                 <constraint firstItem="oEI-7E-0yF" firstAttribute="top" secondItem="bB8-5s-8JR" secondAttribute="bottom" constant="37" id="ZDd-1C-2xq"/>
+                <constraint firstItem="TOA-af-Ei6" firstAttribute="trailing" secondItem="bB8-5s-8JR" secondAttribute="trailing" constant="-9" id="dLX-nP-f4J"/>
                 <constraint firstItem="fhO-vG-LQK" firstAttribute="leading" secondItem="zEi-fI-H9b" secondAttribute="leading" id="gta-49-VHS"/>
                 <constraint firstItem="0T2-QO-u3t" firstAttribute="trailing" secondItem="zEi-fI-H9b" secondAttribute="trailing" id="mb4-2P-aZn"/>
                 <constraint firstItem="SEy-5g-ep8" firstAttribute="top" secondItem="zEi-fI-H9b" secondAttribute="top" constant="3" id="rKY-3G-TOt"/>
@@ -95,6 +104,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="icAddFriendWhite" width="24" height="24"/>
         <image name="imgFriendsEmpty" width="245" height="172"/>
     </resources>
 </document>

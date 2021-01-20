@@ -21,6 +21,7 @@
 }
 
 - (void)setupUI {
+    self.addFriendButton.backgroundColor = UIColor.greenColor;
     [self createGradientLayer];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString: @"幫助好友更快找到你？設定 KOKO ID"
                                                                                          attributes: @{

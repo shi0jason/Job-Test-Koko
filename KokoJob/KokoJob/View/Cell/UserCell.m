@@ -28,8 +28,9 @@
     self.unknowView.layer.cornerRadius = self.unknowView.frame.size.width / 2;
 }
 
-- (void)configure {
-
+- (void)configure:(UserDataModel *)model {
+    [self.userTitle setText: model.name];
+    [self.kokoIdLabel setText: [NSString stringWithFormat:@"KOKO ID：%@", model.identifier]];
 }
 
 @end
