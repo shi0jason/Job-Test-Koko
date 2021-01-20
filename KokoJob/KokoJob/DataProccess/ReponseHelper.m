@@ -14,6 +14,9 @@
 + (nullable id)processDataWith:(NSDictionary* )dict {
     if ([dict.allKeys containsObject: @"response"]) {
         NSArray *response = dict[@"response"];
+        if (response.count == 0) {
+            return @[].mutableCopy;
+        }
         NSDictionary *container = response[0];
         if ([container.allKeys containsObject: @"kokoid"]) {
             UserDataModel *model = [[UserDataModel alloc] init];

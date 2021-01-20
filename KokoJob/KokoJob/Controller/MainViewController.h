@@ -8,14 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-
-#define cellIdentifer @"Cell"
-#define userCell @"userCell"
-#define noneFriendCell @"noneFriendCell"
-#define tabSwitchCell @"tabSwitchCell"
-#define searchCell @"searchCell"
-#define newFriendCell @"newFriendCell"
-#define existFriendCell @"existFriendCell"
+#import "RequestList.h"
 
 @interface MainViewController : BaseViewController
 

@@ -13,7 +13,7 @@
 - (int)numberOfSections {
     switch (dataState) {
         case ProxyNoFriendAndInviteState:
-//            @[]
+//            @[];
             return 0;
             break;
         case ProxyHaveFriendAndNOInviteState:

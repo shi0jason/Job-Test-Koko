@@ -17,6 +17,14 @@ static NSString *friendList2 = @"https://dimanyen.github.io/friend2.json";
 static NSString *friendList3 = @"https://dimanyen.github.io/friend3.json";
 static NSString *emptyData = @"https://dimanyen.github.io/friend4.json";
 
+#define cellIdentifer @"Cell"
+#define userCell @"userCell"
+#define noneFriendCell @"noneFriendCell"
+#define tabSwitchCell @"tabSwitchCell"
+#define searchCell @"searchCell"
+#define newFriendCell @"newFriendCell"
+#define existFriendCell @"existFriendCell"
+
 typedef NS_ENUM(NSUInteger, DownloadProxyState) {
     ProxyNoFriendAndInviteState = 0,
     ProxyHaveFriendAndNOInviteState,
