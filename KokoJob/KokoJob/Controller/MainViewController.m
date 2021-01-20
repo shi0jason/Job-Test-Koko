@@ -7,21 +7,16 @@
 //
 
 #import "MainViewController.h"
+#import "DownloadProxy.h"
 
-@interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    UICollectionView *collectionView;
-}
+@interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) MainViewModel *viewModel;
+
 @end
 
 @implementation MainViewController
-
-#define cellIdentifer @"Cell"
-#define userCell @"userCell"
-#define noneFriendCell @"noneFriendCell"
-#define tabSwitchCell @"tabSwitchCell"
-#define searchCell @"searchCell"
-#define newFriendCell @"newFriendCell"
-#define existFriendCell @"existFriendCell"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,27 +26,38 @@
                                                  blue: 250.0 / 255.0
                                                 alpha: 1.0];
     [self setupCollectionView];
+    [self fetchData];
+}
+
+- (void)fetchData { // ProxyNoFriendAndInviteState
+    __weak typeof(self) weakSelf = self;
+    [DownloadProxy.shared fetchAllDataWithState: dataState handler:^(MainViewModel * _Nullable viewModel, NSError * _Nullable error) {
+        weakSelf.viewModel = viewModel;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.collectionView reloadData];
+        });
+    }];
 }
 
 - (void)setupCollectionView {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame
                                         collectionViewLayout:layout];
-    [collectionView setDataSource:self];
-    [collectionView setDelegate:self];
+    [self.collectionView setDataSource:self];
+    [self.collectionView setDelegate:self];
     
-    [collectionView registerClass: [UICollectionViewCell class]
+    [self.collectionView registerClass: [UICollectionViewCell class]
        forCellWithReuseIdentifier: cellIdentifer];
 
-    [collectionView registerNib: [UINib nibWithNibName: userCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: userCell];
-    [collectionView registerNib: [UINib nibWithNibName: noneFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: noneFriendCell];
-    [collectionView registerNib: [UINib nibWithNibName: tabSwitchCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: tabSwitchCell];
-    [collectionView registerNib: [UINib nibWithNibName: searchCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: searchCell];
-    [collectionView registerNib: [UINib nibWithNibName: newFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: newFriendCell];
-    [collectionView registerNib: [UINib nibWithNibName: existFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: existFriendCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: userCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: userCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: noneFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: noneFriendCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: tabSwitchCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: tabSwitchCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: searchCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: searchCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: newFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: newFriendCell];
+    [self.collectionView registerNib: [UINib nibWithNibName: existFriendCell bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: existFriendCell];
     
-    [collectionView setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview:collectionView];
+    [self.collectionView setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview: self.collectionView];
 }
 
 - (NSInteger)collectionView:(UICollectionView *) collectionView

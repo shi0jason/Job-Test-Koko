@@ -15,6 +15,13 @@ static NSString *userData = @"https://dimanyen.github.io/man.json";
 static NSString *friendList1 = @"https://dimanyen.github.io/friend1.json";
 static NSString *friendList2 = @"https://dimanyen.github.io/friend2.json";
 static NSString *friendList3 = @"https://dimanyen.github.io/friend3.json";
-static NSString *friendList4 = @"https://dimanyen.github.io/friend4.json";
+static NSString *emptyData = @"https://dimanyen.github.io/friend4.json";
+
+typedef NS_ENUM(NSUInteger, DownloadProxyState) {
+    ProxyNoFriendAndInviteState = 0,
+    ProxyHaveFriendAndNOInviteState,
+    ProxyHaveFriendAndInviteState
+};
+#define dataState ProxyNoFriendAndInviteState
 
 #endif /* RequestList_h */

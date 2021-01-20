@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserDataModel.h"
+#import "FriendModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ReponseHelper : NSObject
+
++ (nullable id)processDataWith:(NSDictionary* )dict;
 
 @end
 

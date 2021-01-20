@@ -11,13 +11,31 @@
 @implementation ReponseHelper
 
 
-//"name"
-//"kokoid"
-//
-//"name"
-//"status"
-//"isTop"
-//"fid"
-//"updateDate"
++ (nullable id)processDataWith:(NSDictionary* )dict {
+    if ([dict.allKeys containsObject: @"response"]) {
+        NSArray *response = dict[@"response"];
+        NSDictionary *container = response[0];
+        if ([container.allKeys containsObject: @"kokoid"]) {
+            UserDataModel *model = [[UserDataModel alloc] init];
+            model.name = container[@"name"];
+            model.identifier = container[@"kokoid"];
+            return model;
+        } else {
+            NSMutableArray *container = @[].mutableCopy;
+            for (NSDictionary *dictInside in response) {
+                FriendModel *model = [[FriendModel alloc] init];
+                model.name = dictInside[@"name"];
+                model.status = [dictInside[@"status"] intValue];
+                model.isTop = dictInside[@"isTop"];
+                model.fid = dictInside[@"fid"];
+                model.updateDate = dictInside[@"updateDate"];
+                [container addObject: model];
+            }
+            return container;
+        }
+    } else {
+        return nil;
+    }
+}
 
 @end

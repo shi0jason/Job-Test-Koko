@@ -22,6 +22,7 @@
 		9314A01925B720E500046093 /* NewFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A01725B720E500046093 /* NewFriendCell.xib */; };
 		9314A01D25B7210600046093 /* ExistFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A01B25B7210600046093 /* ExistFriendCell.m */; };
 		9314A01E25B7210600046093 /* ExistFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9314A01C25B7210600046093 /* ExistFriendCell.xib */; };
+		9314A02125B7EA5E00046093 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A02025B7EA5E00046093 /* MainViewModel.m */; };
 		93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC54825B0402100B4C2E5 /* AppDelegate.m */; };
 		93AFC54C25B0402100B4C2E5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC54B25B0402100B4C2E5 /* MainViewController.m */; };
 		93AFC54F25B0402100B4C2E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AFC54D25B0402100B4C2E5 /* Main.storyboard */; };
@@ -78,6 +79,8 @@
 		9314A01A25B7210600046093 /* ExistFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExistFriendCell.h; sourceTree = "<group>"; };
 		9314A01B25B7210600046093 /* ExistFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExistFriendCell.m; sourceTree = "<group>"; };
 		9314A01C25B7210600046093 /* ExistFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExistFriendCell.xib; sourceTree = "<group>"; };
+		9314A01F25B7EA5E00046093 /* MainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
+		9314A02025B7EA5E00046093 /* MainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
 		93AFC54425B0402100B4C2E5 /* KokoJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KokoJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AFC54725B0402100B4C2E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93AFC54825B0402100B4C2E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 				93AFC58025B0487500B4C2E5 /* UserDataModel.m */,
 				93AFC58225B048A300B4C2E5 /* FriendModel.h */,
 				93AFC58325B048A300B4C2E5 /* FriendModel.m */,
+				9314A01F25B7EA5E00046093 /* MainViewModel.h */,
+				9314A02025B7EA5E00046093 /* MainViewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				93AFC54925B0402100B4C2E5 /* AppDelegate.m in Sources */,
 				93149FF225B443DC00046093 /* HostTabViewController.m in Sources */,
 				93149FFF25B70C2C00046093 /* UserCell.m in Sources */,
+				9314A02125B7EA5E00046093 /* MainViewModel.m in Sources */,
 				9314A00E25B7206E00046093 /* TabSwitchCell.m in Sources */,
 				9314A01825B720E500046093 /* NewFriendCell.m in Sources */,
 				9314A01325B7208800046093 /* SearchCell.m in Sources */,

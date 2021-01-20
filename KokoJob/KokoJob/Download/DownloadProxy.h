@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RequestList.h"
+#import "MainViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DownloadProxy : NSObject
+
++ (instancetype)shared;
+- (void)fetchAllDataWithState:(DownloadProxyState)state handler:(void (^)(MainViewModel * _Nullable viewModel, NSError * _Nullable error))handler;
 
 @end
 
