@@ -66,8 +66,12 @@ typedef void(^_Nullable completionHandler)(NSData * _Nullable data, NSURLRespons
 }
 
 - (void)fetchAllDataWith:(NSArray *)list withhandler:(void (^)(MainViewModel * _Nullable viewModel, NSError * _Nullable error))handler {
-    self.blockModel = [[MainViewModel alloc] init];
-    self.blockModel.friendModelList = @[].mutableCopy;
+    if (self.blockModel == nil) {
+        self.blockModel = [[MainViewModel alloc] init];
+    }
+    if (self.blockModel.friendModelList == nil) {
+        self.blockModel.friendModelList = @[].mutableCopy;
+    }
     __weak typeof(self) weakSelf = self;
     for (NSString *path in list) {
         dispatch_group_enter(_group);
@@ -82,18 +86,79 @@ typedef void(^_Nullable completionHandler)(NSData * _Nullable data, NSURLRespons
                 if ([processObject isKindOfClass: [UserDataModel class]]) {
                     weakSelf.blockModel.userModel = (UserDataModel *)processObject;
                 } else if ([processObject isKindOfClass: [NSMutableArray<FriendModel* > class]]) {
-                    weakSelf.blockModel.friendModelList = processObject;
+                    NSMutableArray<FriendModel* > *resultList = weakSelf.blockModel.friendModelList;
+                    NSMutableArray<FriendModel* > *friendModelList = processObject;
+                    
+                    if (self.blockModel.friendModelList.count == 0 && friendModelList.count > 0) {
+                        weakSelf.blockModel.friendModelList = processObject;
+                        NSLog(@"The response is - %@",responseDictionary);
+                        dispatch_group_leave(weakSelf.group);
+                        return;
+                    }
+
+                    NSMutableArray *keyList = [[NSMutableArray alloc] initWithArray: resultList];
+                    [keyList addObjectsFromArray: friendModelList];
+                    
+                    
+                    
+                    NSMutableArray *keyfilterList = @[].mutableCopy;
+                    NSMutableArray *updatefilterList = @[].mutableCopy;
+                    
+                    if (self.blockModel.friendModelList.count > 0) {
+                        for (FriendModel *model in keyList) {
+                            if (![keyfilterList containsObject: model.name]) {
+                                [keyfilterList addObject: model.name];
+                                [updatefilterList addObject: model.updateDate];
+                            } else if ([keyfilterList containsObject: model.name]) {
+                                int index = [self getIndexWithArray: keyfilterList Model: model];
+                                NSString *insideDate = updatefilterList[index];
+                                if ([model.updateDate intValue] < [insideDate intValue]) {
+                                    [resultList removeObjectAtIndex: index];
+                                    [resultList addObject: model];
+                                }
+                            }
+                        }
+                    } else {
+                        weakSelf.blockModel.friendModelList = processObject;
+                    }
+                    
+                    for (FriendModel *model in resultList) {
+                        if ([keyfilterList containsObject: model.name]) {
+                            [keyfilterList removeObject: model.name];
+                        }
+                        NSLog(@"%@", model.name);
+                        NSLog(@"%@", model.updateDate);
+                    }
+                    for (NSString *name in keyfilterList) {
+                        for (FriendModel *model in processObject) {
+                            if ([name isEqualToString: model.name]) {
+                                [resultList addObject: model];
+                            }
+                        }
+                    }
+                    weakSelf.blockModel.friendModelList = resultList;
                 }
                 NSLog(@"The response is - %@",responseDictionary);
+                dispatch_group_leave(weakSelf.group);
             } else {
                 NSLog(@"Error");
+                dispatch_group_leave(weakSelf.group);
             }
-            dispatch_group_leave(weakSelf.group);
         }];
     }
     dispatch_group_notify(_group, _queue, ^{
         handler(weakSelf.blockModel, nil);
     });
+}
+
+- (int)getIndexWithArray:(NSArray *)list  Model:(FriendModel *) model {
+    for (int i = 0; i < list.count; i++) {
+        NSString *name = list[i];
+        if ([name isEqualToString: model.name]) {
+            return i;
+        }
+    }
+    return 0;
 }
 
 - (void)sendRequest:(NSString *)path withCompletionHandler:(completionHandler)completionHandler {

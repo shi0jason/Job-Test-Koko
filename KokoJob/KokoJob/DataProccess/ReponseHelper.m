@@ -31,8 +31,23 @@
                 model.status = [dictInside[@"status"] intValue];
                 model.isTop = dictInside[@"isTop"];
                 model.fid = dictInside[@"fid"];
-                model.updateDate = dictInside[@"updateDate"];
-                [container addObject: model];
+                NSString *updateDateString = dictInside[@"updateDate"];
+                model.updateDate = [updateDateString stringByReplacingOccurrencesOfString: @"/"
+                                                                               withString: @""];
+                BOOL isExsit = false;
+                for (int i = 0; i < container.count ; i++) {
+                    FriendModel *insideModel = container[i];
+                    if ([model.name isEqualToString: insideModel.name]) {
+                        if ([model.updateDate intValue] > [insideModel.updateDate intValue]) {
+                            [container removeObjectAtIndex: i];
+                            [container addObject: model];
+                            isExsit = true;
+                        }
+                    }
+                }
+                if (!isExsit) {
+                    [container addObject: model];
+                }
             }
             return container;
         }
@@ -41,4 +56,13 @@
     }
 }
 
+- (BOOL)checkExist:(NSMutableArray *)container Model:(FriendModel *)model {
+    for (int i = 0; i < container.count ; i++) {
+        FriendModel *insideModel = container[i];
+        if ([model.name isEqualToString: insideModel.name]) {
+            return true;
+        }
+    }
+    return false;
+}
 @end

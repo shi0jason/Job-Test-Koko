@@ -8,20 +8,41 @@
 
 #import "MainViewModel.h"
 
+@interface MainViewModel()
+
+@property (strong, nonatomic) NSMutableArray *cotentList;
+
+@end
+
 @implementation MainViewModel
+
+- (void)setFriendModelList:(NSMutableArray<FriendModel *> *)friendModelList {
+    _friendModelList = friendModelList;
+    
+    NSMutableArray *prcessFriendModelList = friendModelList;
+    
+    NSMutableArray *inviteList = @[].mutableCopy;
+    NSMutableArray *existFriendList = @[].mutableCopy;
+    self.cotentList = @[].mutableCopy;
+    
+    for (FriendModel *model in self.friendModelList) {
+        if (model.status == 0) {
+            
+        }
+    }
+}
 
 - (int)numberOfSections {
     switch (dataState) {
         case ProxyNoFriendAndInviteState:
-//            @[];
+//            NSArray *list = @[userCell, tabSwitchCell, noneFriendCell];
             return 0;
-            break;
         case ProxyHaveFriendAndNOInviteState:
+//            NSArray *list = @[userCell, tabSwitchCell, searchCell];
             return 0;
-            break;
         case ProxyHaveFriendAndInviteState:
+//            NSArray *list = @[userCell, tabSwitchCell, searchCell];
             return 0;
-            break;
         default:
             return 0;
     }

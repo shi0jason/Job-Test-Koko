@@ -30,6 +30,7 @@ typedef NS_ENUM(NSUInteger, DownloadProxyState) {
     ProxyHaveFriendAndNOInviteState,
     ProxyHaveFriendAndInviteState
 };
-#define dataState ProxyNoFriendAndInviteState
+
+#define dataState ProxyHaveFriendAndInviteState
 
 #endif /* RequestList_h */

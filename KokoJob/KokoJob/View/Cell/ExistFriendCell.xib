@@ -61,6 +61,13 @@
                             <action selector="inviteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="QcG-nR-EMC"/>
                         </connections>
                     </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFriendsStar" translatesAutoresizingMaskIntoConstraints="NO" id="x8h-7C-IKF">
+                        <rect key="frame" x="30" y="23" width="14" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="iVB-do-3Lp"/>
+                            <constraint firstAttribute="width" constant="14" id="vWN-Sa-Af4"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
@@ -68,7 +75,9 @@
                 <constraint firstItem="bil-yl-MxW" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="3QH-tZ-tzd"/>
                 <constraint firstItem="bil-yl-MxW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="50" id="DTE-FH-fSQ"/>
                 <constraint firstItem="ZaZ-q0-lcZ" firstAttribute="leading" secondItem="YRq-ku-eEg" secondAttribute="trailing" constant="10" id="DgV-gD-sOQ"/>
+                <constraint firstItem="x8h-7C-IKF" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="LWG-9a-xPe"/>
                 <constraint firstItem="ZaZ-q0-lcZ" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="R2e-g9-9rl"/>
+                <constraint firstItem="bil-yl-MxW" firstAttribute="leading" secondItem="x8h-7C-IKF" secondAttribute="trailing" constant="6" id="dtW-Fl-tTO"/>
                 <constraint firstItem="YRq-ku-eEg" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="gc6-UO-gmP"/>
                 <constraint firstAttribute="trailing" secondItem="ZaZ-q0-lcZ" secondAttribute="trailing" constant="20" id="sP2-3M-lQJ"/>
                 <constraint firstItem="kPp-5V-hnh" firstAttribute="centerY" secondItem="bil-yl-MxW" secondAttribute="centerY" id="xDx-gY-eIJ"/>
@@ -81,6 +90,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="icFriendsStar" width="14" height="14"/>
         <image name="imgFriendsList" width="40" height="40"/>
     </resources>
 </document>
