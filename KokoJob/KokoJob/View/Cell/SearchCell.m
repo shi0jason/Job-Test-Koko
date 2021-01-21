@@ -8,11 +8,24 @@
 
 #import "SearchCell.h"
 
+@interface SearchCell() <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+
+@end
+
 @implementation SearchCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+//    [self.inputTextField becomeFirstResponder];
+    self.inputTextField.delegate = self;
 }
+
+- (IBAction)searchAction:(id)sender {
+    
+}
+
 
 @end

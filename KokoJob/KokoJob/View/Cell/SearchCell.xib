@@ -19,15 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSearchBarSearchGray" translatesAutoresizingMaskIntoConstraints="NO" id="eqI-Ni-22X">
-                        <rect key="frame" x="40" y="12" width="14" height="14"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="14" id="FIF-AL-Tyx"/>
-                            <constraint firstAttribute="width" constant="14" id="bXf-eE-uzx"/>
-                        </constraints>
-                    </imageView>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="想轉一筆給誰呢？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6r4-bv-ksa">
-                        <rect key="frame" x="62" y="0.0" width="135.5" height="36"/>
+                        <rect key="frame" x="62" y="0.0" width="249" height="36"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -39,18 +32,34 @@
                             <constraint firstAttribute="height" constant="24" id="wuF-M7-fC2"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rg7-aR-A8u">
+                        <rect key="frame" x="40" y="11" width="14" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="1nt-ay-nhC"/>
+                            <constraint firstAttribute="height" constant="14" id="QnE-wM-YHu"/>
+                        </constraints>
+                        <state key="normal" image="icSearchBarSearchGray"/>
+                        <connections>
+                            <action selector="searchAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="24c-dF-2xh"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="eqI-Ni-22X" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" constant="-4" id="9Vz-na-Dfj"/>
                 <constraint firstItem="6r4-bv-ksa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FJS-JA-8U4"/>
+                <constraint firstItem="cvf-eL-kiX" firstAttribute="leading" secondItem="6r4-bv-ksa" secondAttribute="trailing" constant="10" id="MIl-Op-vAd"/>
                 <constraint firstItem="SEy-5g-ep8" firstAttribute="trailing" secondItem="cvf-eL-kiX" secondAttribute="trailing" constant="30" id="Moc-vl-IOw"/>
                 <constraint firstItem="cvf-eL-kiX" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" constant="-5" id="U6p-eK-y5N"/>
-                <constraint firstItem="eqI-Ni-22X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="dhy-5r-r7c"/>
-                <constraint firstItem="6r4-bv-ksa" firstAttribute="leading" secondItem="eqI-Ni-22X" secondAttribute="trailing" constant="8" id="jCs-rI-X8v"/>
+                <constraint firstItem="Rg7-aR-A8u" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" constant="-5" id="dL2-FL-PNB"/>
+                <constraint firstItem="6r4-bv-ksa" firstAttribute="leading" secondItem="Rg7-aR-A8u" secondAttribute="trailing" constant="8" id="jjZ-AD-kzm"/>
+                <constraint firstItem="Rg7-aR-A8u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="shQ-8L-Y0r"/>
                 <constraint firstAttribute="bottom" secondItem="6r4-bv-ksa" secondAttribute="bottom" id="yE6-El-2ef"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="inputTextField" destination="6r4-bv-ksa" id="aCj-fN-38n"/>
+                <outlet property="searchButton" destination="Rg7-aR-A8u" id="ExQ-hl-qBr"/>
+            </connections>
             <point key="canvasLocation" x="131.15942028985509" y="122.54464285714285"/>
         </collectionViewCell>
     </objects>

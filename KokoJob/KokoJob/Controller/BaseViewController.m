@@ -41,7 +41,6 @@
 }
 
 - (void)navigationAction:(id)sender {
-    NSLog(@"click");
 }
 
 @end

@@ -126,8 +126,6 @@ typedef void(^_Nullable completionHandler)(NSData * _Nullable data, NSURLRespons
                         if ([keyfilterList containsObject: model.name]) {
                             [keyfilterList removeObject: model.name];
                         }
-                        NSLog(@"%@", model.name);
-                        NSLog(@"%@", model.updateDate);
                     }
                     for (NSString *name in keyfilterList) {
                         for (FriendModel *model in processObject) {

@@ -19,10 +19,29 @@
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) MainViewModel *viewModel;
+@property (strong, nonatomic) NSLayoutConstraint *collectionViewTopConstaint;
+@property (strong, nonatomic) NSLayoutConstraint *collectionViewBottomConstaint;
 
 @end
 
 @implementation MainViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillChangeFrame:)
+                                                 name:UIKeyboardWillChangeFrameNotification
+                                               object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear: animated];
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,16 +78,24 @@
     [self.collectionView registerNib: [UINib nibWithNibName: existFriendCell bundle: nil] forCellWithReuseIdentifier: existFriendCell];
     
     self.collectionView.backgroundColor = UIColor.whiteColor;
+    [self.collectionView.superview endEditing: true];
     [self.view addSubview: self.collectionView];
     
     self.collectionView.translatesAutoresizingMaskIntoConstraints = false;
+    self.collectionViewTopConstaint = [NSLayoutConstraint constraintWithItem: self.collectionView
+                                                                   attribute: NSLayoutAttributeTop
+                                                                   relatedBy: NSLayoutRelationEqual
+                                                                      toItem: self.view
+                                                                   attribute: NSLayoutAttributeTop
+                                                                  multiplier: 1.0 constant: 50.0];
+    self.collectionViewBottomConstaint = [NSLayoutConstraint constraintWithItem: self.collectionView
+                                                                      attribute: NSLayoutAttributeBottom
+                                                                      relatedBy: NSLayoutRelationEqual
+                                                                         toItem: self.view
+                                                                      attribute: NSLayoutAttributeBottom
+                                                                     multiplier: 1.0 constant: 0.0];
     [self.view addConstraints:@[
-                                [NSLayoutConstraint constraintWithItem: self.collectionView
-                                                             attribute: NSLayoutAttributeTop
-                                                             relatedBy: NSLayoutRelationEqual
-                                                                toItem: self.view
-                                                             attribute: NSLayoutAttributeTop
-                                                            multiplier: 1.0 constant: 50.0],
+                                self.collectionViewTopConstaint,
                                 [NSLayoutConstraint constraintWithItem: self.collectionView
                                                              attribute: NSLayoutAttributeRight
                                                              relatedBy: NSLayoutRelationEqual
@@ -81,13 +108,31 @@
                                                                 toItem: self.view
                                                              attribute: NSLayoutAttributeLeft
                                                             multiplier: 1.0 constant: 0.0],
-                                [NSLayoutConstraint constraintWithItem: self.collectionView
-                                                             attribute: NSLayoutAttributeBottom
-                                                             relatedBy: NSLayoutRelationEqual
-                                                                toItem: self.view
-                                                             attribute: NSLayoutAttributeBottom
-                                                            multiplier: 1.0 constant: 0.0],
+                                self.collectionViewBottomConstaint
                                 ]];
+}
+#pragma mark - Keyboard Action
+
+- (void)keyboardDidHide:(NSNotification *) notification {
+    self.collectionViewTopConstaint.constant = 0;
+    self.collectionViewBottomConstaint.constant = 0;
+}
+
+- (void)keyboardWillChangeFrame:(NSNotification *) notification {
+    CGFloat keyboardHeight = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
+    self.collectionViewTopConstaint.constant = -keyboardHeight + 50;
+    self.collectionViewBottomConstaint.constant = -keyboardHeight + 50;
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded: touches withEvent: event];
+    [self.view endEditing: true];
+}
+
+#pragma mark - Delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.view endEditing: true];
 }
 
 - (NSInteger)collectionView:(UICollectionView *) collectionView

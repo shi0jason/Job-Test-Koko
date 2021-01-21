@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FriendModel.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ExistFriendCell : UICollectionViewCell

@@ -71,6 +71,5 @@
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(nonnull UIViewController *)viewController {
-    NSLog(@"%lu", (unsigned long)self.selectedIndex);
 }
 @end
