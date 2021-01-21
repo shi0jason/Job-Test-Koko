@@ -19,13 +19,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//    [self.inputTextField becomeFirstResponder];
     self.inputTextField.delegate = self;
 }
 
 - (IBAction)searchAction:(id)sender {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(search:)]) {
+        [self.delegate search: self.inputTextField.text];
+    }
 }
-
 
 @end

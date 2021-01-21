@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol SearchCellDelegate <NSObject>
+
+- (void)search:(NSString *)text;
+
+@end
+
 @interface SearchCell : UICollectionViewCell
+
+@property(weak, nonatomic) id<SearchCellDelegate> delegate;
 
 @end
 

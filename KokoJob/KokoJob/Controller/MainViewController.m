@@ -15,7 +15,7 @@
 #import "NewFriendCell.h"
 #import "ExistFriendCell.h"
 
-@interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SearchCellDelegate, MainViewModelDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) MainViewModel *viewModel;
@@ -55,6 +55,7 @@
     __weak typeof(self) weakSelf = self;
     [DownloadProxy.shared fetchAllDataWithState: dataState handler:^(MainViewModel * _Nullable viewModel, NSError * _Nullable error) {
         weakSelf.viewModel = viewModel;
+        weakSelf.viewModel.delegate = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.collectionView reloadData];
         });
@@ -153,6 +154,7 @@
             return cell;
         } else if ([object isEqualToString: searchCell]) {
             SearchCell *cell = (SearchCell *)[collectionView dequeueReusableCellWithReuseIdentifier: searchCell forIndexPath:indexPath];
+            cell.delegate = self;
             return cell;
         }
     } else if ([object isKindOfClass:[UserDataModel class]]) {
@@ -187,4 +189,15 @@
     }
     return CGSizeMake(self.view.frame.size.width, 50);
 }
+
+- (void)search:(NSString *)text {
+    if (self.viewModel) {
+        [self.viewModel search: text];
+    }
+}
+
+- (void)reloadData {
+    [self.collectionView reloadData];
+}
+
 @end

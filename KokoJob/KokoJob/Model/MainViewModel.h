@@ -13,13 +13,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol MainViewModelDelegate <NSObject>
+
+- (void)reloadData;
+
+@end
+
 @interface MainViewModel : NSObject
 
 @property (strong, nonatomic) UserDataModel *userModel;
 @property (strong, nonatomic) NSMutableArray<FriendModel* > *friendModelList;
+@property(weak, nonatomic) id<MainViewModelDelegate> delegate;
 
 - (NSArray *)getCollectionType;
 - (NSUInteger)numberOfSections;
+- (void)search:(NSString *)text;
 
 @end
 
