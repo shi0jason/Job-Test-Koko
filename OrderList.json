@@ -3,7 +3,7 @@
     "totalPrice" : "560",
     "productList" : [
         {
-            "id" : "1",
+            "identifier" : "1",
             "name" : "杯子",
             "description" : "快樂杯",
             "price" : "60",
@@ -11,7 +11,7 @@
             "path" : "https://s.yimg.com/zp/MerchandiseImages/20E5D99671-SP-10306300.jpg"
         },
         {
-            "id" : "2",
+            "identifier" : "2",
             "name" : "拖鞋",
             "description" : "神奇拖鞋",
             "price" : "150",
@@ -19,7 +19,7 @@
             "path" : "https://s.yimg.com/zp/MerchandiseImages/20E5D99671-SP-10306300.jpg"
         },
         {
-            "id" : "3",
+            "identifier" : "3",
             "name" : "帽子",
             "description" : "遮陽帽",
             "price" : "350",
